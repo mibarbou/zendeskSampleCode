@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		750F9E46A6ECE796591D5E55 /* Pods_zendeskGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C225A0CAF8DA14D7D2BDC92 /* Pods_zendeskGuide.framework */; };
+		86F6326643F3D5148846A4E4 /* Pods_zendeskGuideTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397679B890453FFED527D355 /* Pods_zendeskGuideTests.framework */; };
 		D0DDAD001FA8E50B004A683A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDACFF1FA8E50B004A683A /* AppDelegate.swift */; };
 		D0DDAD021FA8E50B004A683A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0DDAD011FA8E50B004A683A /* Assets.xcassets */; };
 		D0DDAD051FA8E50B004A683A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DDAD031FA8E50B004A683A /* LaunchScreen.storyboard */; };
@@ -27,6 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C225A0CAF8DA14D7D2BDC92 /* Pods_zendeskGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zendeskGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		397679B890453FFED527D355 /* Pods_zendeskGuideTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zendeskGuideTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1578E5E15FB6C6E3D751083 /* Pods-zendeskGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zendeskGuide.release.xcconfig"; path = "Pods/Target Support Files/Pods-zendeskGuide/Pods-zendeskGuide.release.xcconfig"; sourceTree = "<group>"; };
+		C601B4AB008473CBA69A0892 /* Pods-zendeskGuideTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zendeskGuideTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-zendeskGuideTests/Pods-zendeskGuideTests.release.xcconfig"; sourceTree = "<group>"; };
 		D0DDACFC1FA8E50B004A683A /* zendeskGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zendeskGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0DDACFF1FA8E50B004A683A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0DDAD011FA8E50B004A683A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +44,8 @@
 		D0DDAD1A1FA8E572004A683A /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
 		D0DDAD201FA8E967004A683A /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		D0DDAD211FA8E967004A683A /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
+		D1AF783B8443A70E88D3D754 /* Pods-zendeskGuideTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zendeskGuideTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zendeskGuideTests/Pods-zendeskGuideTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E7EDDCCB0CEB314600BE3E09 /* Pods-zendeskGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zendeskGuide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zendeskGuide/Pods-zendeskGuide.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				750F9E46A6ECE796591D5E55 /* Pods_zendeskGuide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +61,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86F6326643F3D5148846A4E4 /* Pods_zendeskGuideTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		418EF41230E46637AEE698E9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7EDDCCB0CEB314600BE3E09 /* Pods-zendeskGuide.debug.xcconfig */,
+				B1578E5E15FB6C6E3D751083 /* Pods-zendeskGuide.release.xcconfig */,
+				D1AF783B8443A70E88D3D754 /* Pods-zendeskGuideTests.debug.xcconfig */,
+				C601B4AB008473CBA69A0892 /* Pods-zendeskGuideTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C43A3AB4E9558793BD38C622 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C225A0CAF8DA14D7D2BDC92 /* Pods_zendeskGuide.framework */,
+				397679B890453FFED527D355 /* Pods_zendeskGuideTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D0DDACF31FA8E50B004A683A = {
 			isa = PBXGroup;
 			children = (
 				D0DDACFE1FA8E50B004A683A /* zendeskGuide */,
 				D0DDAD0E1FA8E50B004A683A /* zendeskGuideTests */,
 				D0DDACFD1FA8E50B004A683A /* Products */,
+				418EF41230E46637AEE698E9 /* Pods */,
+				C43A3AB4E9558793BD38C622 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0DDAD141FA8E50B004A683A /* Build configuration list for PBXNativeTarget "zendeskGuide" */;
 			buildPhases = (
+				539F9DEE0AF44128CA418AE9 /* [CP] Check Pods Manifest.lock */,
 				D0DDACF81FA8E50B004A683A /* Sources */,
 				D0DDACF91FA8E50B004A683A /* Frameworks */,
 				D0DDACFA1FA8E50B004A683A /* Resources */,
+				81DF5A832679263F2F3AAF12 /* [CP] Embed Pods Frameworks */,
+				2F1B6B2B8296BE47924DD463 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0DDAD171FA8E50B004A683A /* Build configuration list for PBXNativeTarget "zendeskGuideTests" */;
 			buildPhases = (
+				1C373BC011438199D0210E87 /* [CP] Check Pods Manifest.lock */,
 				D0DDAD071FA8E50B004A683A /* Sources */,
 				D0DDAD081FA8E50B004A683A /* Frameworks */,
 				D0DDAD091FA8E50B004A683A /* Resources */,
+				32F8832AEA26D80C376AAC53 /* [CP] Embed Pods Frameworks */,
+				C05326769574DA1AACFCB731 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +234,112 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C373BC011438199D0210E87 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zendeskGuideTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F1B6B2B8296BE47924DD463 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-zendeskGuide/Pods-zendeskGuide-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32F8832AEA26D80C376AAC53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-zendeskGuideTests/Pods-zendeskGuideTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		539F9DEE0AF44128CA418AE9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zendeskGuide-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81DF5A832679263F2F3AAF12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-zendeskGuide/Pods-zendeskGuide-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
+				"${BUILT_PRODUCTS_DIR}/Suas/Suas.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Suas.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-zendeskGuide/Pods-zendeskGuide-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C05326769574DA1AACFCB731 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-zendeskGuideTests/Pods-zendeskGuideTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0DDACF81FA8E50B004A683A /* Sources */ = {
@@ -347,6 +491,7 @@
 		};
 		D0DDAD151FA8E50B004A683A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7EDDCCB0CEB314600BE3E09 /* Pods-zendeskGuide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -362,6 +507,7 @@
 		};
 		D0DDAD161FA8E50B004A683A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1578E5E15FB6C6E3D751083 /* Pods-zendeskGuide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -377,6 +523,7 @@
 		};
 		D0DDAD181FA8E50B004A683A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1AF783B8443A70E88D3D754 /* Pods-zendeskGuideTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -394,6 +541,7 @@
 		};
 		D0DDAD191FA8E50B004A683A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C601B4AB008473CBA69A0892 /* Pods-zendeskGuideTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
