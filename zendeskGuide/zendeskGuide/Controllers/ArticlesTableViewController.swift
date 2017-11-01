@@ -23,6 +23,12 @@ class ArticlesTableViewController: UITableViewController {
         
         let nib = UINib(nibName: ArticleCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: ArticleCell.identifier)
+        
+        ApiClient.articles(success: { (articles) in
+            
+        }) { (error) in
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
