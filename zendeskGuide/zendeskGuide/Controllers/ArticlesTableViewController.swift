@@ -38,6 +38,7 @@ class ArticlesTableViewController: UITableViewController {
 	
 	fileprivate func setup(){
 		self.title = "Articles"
+        navigationController?.navigationBar.prefersLargeTitles = true
 		let nib = UINib(nibName: ArticleCell.identifier, bundle: nil)
 		tableView.register(nib, forCellReuseIdentifier: ArticleCell.identifier)
 		tableView.estimatedRowHeight = 60.0

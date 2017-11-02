@@ -28,7 +28,7 @@ class ArticleCell: UITableViewCell {
 	
 	func configureCell(article: Article) {
 		self.titleLabel.text = article.title
-        self.bodyLabel.attributedText = NSAttributedString(html: article.body)
+        self.bodyLabel.attributedText = article.body
         if let updateDate = article.updatedAt {
             let formatter = DateFormatter.updateArticleViewModel
             self.updatedLabel.text = formatter.string(from: updateDate)

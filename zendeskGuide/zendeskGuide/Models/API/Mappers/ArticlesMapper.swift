@@ -30,8 +30,9 @@ struct ArticlesMapper {
 	}
 	
 	private func toArticle(response: ArticleResponse) -> Article {
+        let bodyHtml = NSAttributedString(html: response.body ?? "")
 		let article = Article(title: response.title,
-							  body: response.body ?? "",
+                              body: bodyHtml!,
 							  updatedAt: getDate(string: response.updatedAt))
 		return article
 	}

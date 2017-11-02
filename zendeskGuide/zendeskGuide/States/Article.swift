@@ -10,6 +10,6 @@ import Foundation
 
 struct Article {
 	let title: 		String
-	let body:		String
+	let body:		NSAttributedString
 	let updatedAt:	Date?
 }

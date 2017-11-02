@@ -21,6 +21,8 @@ class ApiClient {
                                     success: @escaping ([String : Any])->(),
                                     fail: @escaping (ApiError)->()) {
         
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+ 
         let _ = ApiClient.manager.request(endpoint.path,
                                           method: endpoint.method,
                                           parameters: endpoint.parameters,
@@ -57,11 +59,15 @@ extension ApiClient {
         
         self.request(endpoint: .articles,
                      success: { (response) in
-						guard let guideArticles = ArticlesMapper().getGuideArticles(response: response) else {
-							fail(.parserError)
-							return
-						}
-						success(guideArticles)
+                        DispatchQueue.global(qos: .background).async {
+                            guard let guideArticles = ArticlesMapper().getGuideArticles(response: response) else {
+                                stopNetworkIndicator()
+                                fail(.parserError)
+                                return
+                            }
+                            stopNetworkIndicator()
+                            success(guideArticles)
+                        }
         }) { (error) in
             fail(error)
         }
@@ -73,16 +79,27 @@ extension ApiClient {
 		
 		self.request(endpoint: .articlesNextPage(url: url),
 					 success: { (response) in
-						guard let guideArticles = ArticlesMapper().getGuideArticles(response: response) else {
-							fail(.parserError)
-							return
-						}
-						success(guideArticles)
+                        DispatchQueue.global(qos: .background).async {
+                            guard let guideArticles = ArticlesMapper().getGuideArticles(response: response) else {
+                                stopNetworkIndicator()
+                                fail(.parserError)
+                                return
+                            }
+                            stopNetworkIndicator()
+                            success(guideArticles)
+                        }
 		}) { (error) in
 			fail(error)
 		}
 		
 	}
+    
+    
+    fileprivate static func stopNetworkIndicator()  {
+        DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }
+    }
 }
 
 
