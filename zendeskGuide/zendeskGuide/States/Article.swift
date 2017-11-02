@@ -11,5 +11,5 @@ import Foundation
 struct Article {
 	let title: 		String
 	let body:		String
-	let updatedAt:	Date
+	let updatedAt:	Date?
 }

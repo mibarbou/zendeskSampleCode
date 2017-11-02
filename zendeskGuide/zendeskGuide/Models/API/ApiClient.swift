@@ -57,7 +57,7 @@ extension ApiClient {
         
         self.request(endpoint: .articles,
                      success: { (response) in
-						guard let guideArticles = self.parseArticles(response: response) else {
+						guard let guideArticles = ArticlesMapper().getGuideArticles(response: response) else {
 							fail(.parserError)
 							return
 						}
@@ -73,7 +73,7 @@ extension ApiClient {
 		
 		self.request(endpoint: .articlesNextPage(url: url),
 					 success: { (response) in
-						guard let guideArticles = self.parseArticles(response: response) else {
+						guard let guideArticles = ArticlesMapper().getGuideArticles(response: response) else {
 							fail(.parserError)
 							return
 						}
@@ -85,19 +85,6 @@ extension ApiClient {
 	}
 }
 
-
-//MARK: - Utils
-extension ApiClient {
-	fileprivate static func parseArticles(response: [String : Any]) -> GuideArticles? {
-		guard let articlesResponse = ArticlesResponse(json: response) else {
-			return nil
-		}
-		guard let guideArticles = ArticlesMapper.toGuideArticles(response: articlesResponse) else {
-			return nil
-		}
-		return guideArticles
-	}
-}
 
 
 

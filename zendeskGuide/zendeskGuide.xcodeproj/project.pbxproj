@@ -18,6 +18,8 @@
 		AD21060F1FAB37DF00FFEACF /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21060E1FAB37DF00FFEACF /* Article.swift */; };
 		AD2106111FAB626F00FFEACF /* FetchArticlesNextPageAsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2106101FAB626F00FFEACF /* FetchArticlesNextPageAsyncAction.swift */; };
 		AD2106131FAB649900FFEACF /* ArticlesNextPageFetchedAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2106121FAB649900FFEACF /* ArticlesNextPageFetchedAction.swift */; };
+		D04F2A401FAB8F19005EED8B /* NSAttributedString+html.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F2A3F1FAB8F19005EED8B /* NSAttributedString+html.swift */; };
+		D04F2A421FAB97C7005EED8B /* DateFormatter+update.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F2A411FAB97C7005EED8B /* DateFormatter+update.swift */; };
 		D0DDAD001FA8E50B004A683A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDACFF1FA8E50B004A683A /* AppDelegate.swift */; };
 		D0DDAD021FA8E50B004A683A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0DDAD011FA8E50B004A683A /* Assets.xcassets */; };
 		D0DDAD051FA8E50B004A683A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DDAD031FA8E50B004A683A /* LaunchScreen.storyboard */; };
@@ -56,6 +58,8 @@
 		AD2106121FAB649900FFEACF /* ArticlesNextPageFetchedAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesNextPageFetchedAction.swift; sourceTree = "<group>"; };
 		B1578E5E15FB6C6E3D751083 /* Pods-zendeskGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zendeskGuide.release.xcconfig"; path = "Pods/Target Support Files/Pods-zendeskGuide/Pods-zendeskGuide.release.xcconfig"; sourceTree = "<group>"; };
 		C601B4AB008473CBA69A0892 /* Pods-zendeskGuideTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zendeskGuideTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-zendeskGuideTests/Pods-zendeskGuideTests.release.xcconfig"; sourceTree = "<group>"; };
+		D04F2A3F1FAB8F19005EED8B /* NSAttributedString+html.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+html.swift"; sourceTree = "<group>"; };
+		D04F2A411FAB97C7005EED8B /* DateFormatter+update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+update.swift"; sourceTree = "<group>"; };
 		D0DDACFC1FA8E50B004A683A /* zendeskGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zendeskGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0DDACFF1FA8E50B004A683A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0DDAD011FA8E50B004A683A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,6 +156,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D04F2A3E1FAB8EDC005EED8B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D04F2A3F1FAB8F19005EED8B /* NSAttributedString+html.swift */,
+				D04F2A411FAB97C7005EED8B /* DateFormatter+update.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D0DDACF31FA8E50B004A683A = {
 			isa = PBXGroup;
 			children = (
@@ -177,12 +190,13 @@
 			children = (
 				D0DDACFF1FA8E50B004A683A /* AppDelegate.swift */,
 				AD2106071FAB340E00FFEACF /* Store.swift */,
+				D0DDAD241FA8FB70004A683A /* Controllers */,
 				AD2105FC1FAB2DE700FFEACF /* States */,
 				AD2105FF1FAB2F2A00FFEACF /* Actions */,
 				AD2106001FAB2F3600FFEACF /* Reducers */,
 				D0DDAD261FA8FBC7004A683A /* Models */,
 				D0DDAD251FA8FB87004A683A /* Views */,
-				D0DDAD241FA8FB70004A683A /* Controllers */,
+				D04F2A3E1FAB8EDC005EED8B /* Extensions */,
 				D0DDAD011FA8E50B004A683A /* Assets.xcassets */,
 				D0DDAD031FA8E50B004A683A /* LaunchScreen.storyboard */,
 				D0DDAD061FA8E50B004A683A /* Info.plist */,
@@ -464,10 +478,12 @@
 				AD2106061FAB327800FFEACF /* GuideArticlesReducer.swift in Sources */,
 				D0DDAD1B1FA8E572004A683A /* ArticlesTableViewController.swift in Sources */,
 				D0DDAD001FA8E50B004A683A /* AppDelegate.swift in Sources */,
+				D04F2A421FAB97C7005EED8B /* DateFormatter+update.swift in Sources */,
 				AD2105FB1FAB2D8100FFEACF /* GuideArticles.swift in Sources */,
 				D0DDAD351FA90880004A683A /* ArticleResponse.swift in Sources */,
 				AD2106021FAB306500FFEACF /* FetchArticlesAsyncAction.swift in Sources */,
 				AD2106131FAB649900FFEACF /* ArticlesNextPageFetchedAction.swift in Sources */,
+				D04F2A401FAB8F19005EED8B /* NSAttributedString+html.swift in Sources */,
 				AD2106081FAB340E00FFEACF /* Store.swift in Sources */,
 				D0DDAD221FA8E967004A683A /* ArticleCell.swift in Sources */,
 				D0DDAD2B1FA8FC27004A683A /* ApiError.swift in Sources */,
