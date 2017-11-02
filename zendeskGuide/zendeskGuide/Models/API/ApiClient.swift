@@ -51,16 +51,20 @@ class ApiClient {
 
 //MARK: Public methods
 extension ApiClient {
-    public static func articles(success: @escaping ([String : Any]) -> (),
+    public static func articles(success: @escaping (GuideArticles) -> (),
                                 fail: @escaping (ApiError) -> ()) {
         
         self.request(endpoint: .articles,
                      success: { (response) in
-                        if let articlesResponse = ArticlesResponse(json: response) {
-                            print(articlesResponse)
-                        } else {
-                            fail(.parserError)
-                        }
+						guard let articlesResponse = ArticlesResponse(json: response) else {
+							fail(.parserError)
+							return
+						}
+						guard let guideArticles = ArticlesMapper.toGuideArticles(response: articlesResponse) else {
+							fail(.parserError)
+							return
+						}
+						success(guideArticles)
         }) { (error) in
             fail(error)
         }

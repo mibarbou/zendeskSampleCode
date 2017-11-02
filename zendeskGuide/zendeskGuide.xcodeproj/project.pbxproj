@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		750F9E46A6ECE796591D5E55 /* Pods_zendeskGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C225A0CAF8DA14D7D2BDC92 /* Pods_zendeskGuide.framework */; };
 		86F6326643F3D5148846A4E4 /* Pods_zendeskGuideTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397679B890453FFED527D355 /* Pods_zendeskGuideTests.framework */; };
+		AD2105FB1FAB2D8100FFEACF /* GuideArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2105FA1FAB2D8100FFEACF /* GuideArticles.swift */; };
+		AD2106021FAB306500FFEACF /* FetchArticlesAsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2106011FAB306500FFEACF /* FetchArticlesAsyncAction.swift */; };
+		AD2106041FAB31D700FFEACF /* ArticlesFetchedAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2106031FAB31D700FFEACF /* ArticlesFetchedAction.swift */; };
+		AD2106061FAB327800FFEACF /* GuideArticlesReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2106051FAB327800FFEACF /* GuideArticlesReducer.swift */; };
+		AD2106081FAB340E00FFEACF /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2106071FAB340E00FFEACF /* Store.swift */; };
+		AD21060D1FAB35F000FFEACF /* ArticlesMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21060C1FAB35F000FFEACF /* ArticlesMapper.swift */; };
+		AD21060F1FAB37DF00FFEACF /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21060E1FAB37DF00FFEACF /* Article.swift */; };
 		D0DDAD001FA8E50B004A683A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDACFF1FA8E50B004A683A /* AppDelegate.swift */; };
 		D0DDAD021FA8E50B004A683A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0DDAD011FA8E50B004A683A /* Assets.xcassets */; };
 		D0DDAD051FA8E50B004A683A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DDAD031FA8E50B004A683A /* LaunchScreen.storyboard */; };
@@ -36,6 +43,13 @@
 /* Begin PBXFileReference section */
 		2C225A0CAF8DA14D7D2BDC92 /* Pods_zendeskGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zendeskGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		397679B890453FFED527D355 /* Pods_zendeskGuideTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zendeskGuideTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD2105FA1FAB2D8100FFEACF /* GuideArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideArticles.swift; sourceTree = "<group>"; };
+		AD2106011FAB306500FFEACF /* FetchArticlesAsyncAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchArticlesAsyncAction.swift; sourceTree = "<group>"; };
+		AD2106031FAB31D700FFEACF /* ArticlesFetchedAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesFetchedAction.swift; sourceTree = "<group>"; };
+		AD2106051FAB327800FFEACF /* GuideArticlesReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideArticlesReducer.swift; sourceTree = "<group>"; };
+		AD2106071FAB340E00FFEACF /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		AD21060C1FAB35F000FFEACF /* ArticlesMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesMapper.swift; sourceTree = "<group>"; };
+		AD21060E1FAB37DF00FFEACF /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		B1578E5E15FB6C6E3D751083 /* Pods-zendeskGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zendeskGuide.release.xcconfig"; path = "Pods/Target Support Files/Pods-zendeskGuide/Pods-zendeskGuide.release.xcconfig"; sourceTree = "<group>"; };
 		C601B4AB008473CBA69A0892 /* Pods-zendeskGuideTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zendeskGuideTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-zendeskGuideTests/Pods-zendeskGuideTests.release.xcconfig"; sourceTree = "<group>"; };
 		D0DDACFC1FA8E50B004A683A /* zendeskGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zendeskGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +103,40 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AD2105FC1FAB2DE700FFEACF /* States */ = {
+			isa = PBXGroup;
+			children = (
+				AD2105FA1FAB2D8100FFEACF /* GuideArticles.swift */,
+				AD21060E1FAB37DF00FFEACF /* Article.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		AD2105FF1FAB2F2A00FFEACF /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				AD2106011FAB306500FFEACF /* FetchArticlesAsyncAction.swift */,
+				AD2106031FAB31D700FFEACF /* ArticlesFetchedAction.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		AD2106001FAB2F3600FFEACF /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				AD2106051FAB327800FFEACF /* GuideArticlesReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		AD2106091FAB356400FFEACF /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				AD21060C1FAB35F000FFEACF /* ArticlesMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
 		C43A3AB4E9558793BD38C622 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +170,10 @@
 			isa = PBXGroup;
 			children = (
 				D0DDACFF1FA8E50B004A683A /* AppDelegate.swift */,
+				AD2106071FAB340E00FFEACF /* Store.swift */,
+				AD2105FC1FAB2DE700FFEACF /* States */,
+				AD2105FF1FAB2F2A00FFEACF /* Actions */,
+				AD2106001FAB2F3600FFEACF /* Reducers */,
 				D0DDAD261FA8FBC7004A683A /* Models */,
 				D0DDAD251FA8FB87004A683A /* Views */,
 				D0DDAD241FA8FB70004A683A /* Controllers */,
@@ -173,6 +225,7 @@
 				D0DDAD2F1FA8FE32004A683A /* Endpoint.swift */,
 				D0DDAD2A1FA8FC27004A683A /* ApiError.swift */,
 				D0DDAD311FA9067F004A683A /* Responses */,
+				AD2106091FAB356400FFEACF /* Mappers */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -402,12 +455,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0DDAD331FA907E2004A683A /* ArticlesResponse.swift in Sources */,
+				AD2106061FAB327800FFEACF /* GuideArticlesReducer.swift in Sources */,
 				D0DDAD1B1FA8E572004A683A /* ArticlesTableViewController.swift in Sources */,
 				D0DDAD001FA8E50B004A683A /* AppDelegate.swift in Sources */,
+				AD2105FB1FAB2D8100FFEACF /* GuideArticles.swift in Sources */,
 				D0DDAD351FA90880004A683A /* ArticleResponse.swift in Sources */,
+				AD2106021FAB306500FFEACF /* FetchArticlesAsyncAction.swift in Sources */,
+				AD2106081FAB340E00FFEACF /* Store.swift in Sources */,
 				D0DDAD221FA8E967004A683A /* ArticleCell.swift in Sources */,
 				D0DDAD2B1FA8FC27004A683A /* ApiError.swift in Sources */,
+				AD21060D1FAB35F000FFEACF /* ArticlesMapper.swift in Sources */,
+				AD21060F1FAB37DF00FFEACF /* Article.swift in Sources */,
 				D0DDAD301FA8FE32004A683A /* Endpoint.swift in Sources */,
+				AD2106041FAB31D700FFEACF /* ArticlesFetchedAction.swift in Sources */,
 				D0DDAD291FA8FC10004A683A /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
