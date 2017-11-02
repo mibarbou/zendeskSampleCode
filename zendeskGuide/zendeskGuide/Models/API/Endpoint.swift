@@ -14,13 +14,14 @@ let baseURL: String = "https://support.zendesk.com/api/v2/help_center/en-us"
 
 enum Endpoint {
     case articles
+	case articlesNextPage(url: URL)
 }
 
 //MARK: - method
 extension Endpoint {
      var method: Alamofire.HTTPMethod {
         switch self {
-        case .articles:
+        case .articles, .articlesNextPage:
             return .get
         }
     }
@@ -32,6 +33,8 @@ extension Endpoint {
         switch self {
         case .articles:
             return baseURL + "/articles.json"
+		case let .articlesNextPage(url: u):
+			return "\(u)"
         }
     }
 }
@@ -40,7 +43,7 @@ extension Endpoint {
 extension Endpoint {
      var parameters: [String : String] {
         switch self {
-        case .articles:
+		case .articles, .articlesNextPage:
             return [:]
         }
     }

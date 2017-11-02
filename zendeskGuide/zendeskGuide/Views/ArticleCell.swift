@@ -12,7 +12,9 @@ class ArticleCell: UITableViewCell {
     static let identifier = "ArticleCell"
     
     @IBOutlet weak var titleLabel: UILabel!
-    
+	@IBOutlet weak var bodyLabel: UILabel!
+	@IBOutlet weak var updatedLabel: UILabel!
+	
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,5 +25,10 @@ class ArticleCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
+	
+	func configureCell(article: Article) {
+		self.titleLabel.text = article.title
+//		self.bodyLabel.text = article.body
+	}
     
 }

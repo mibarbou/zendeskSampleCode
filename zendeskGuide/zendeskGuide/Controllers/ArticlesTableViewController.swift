@@ -10,9 +10,12 @@ import UIKit
 
 class ArticlesTableViewController: UITableViewController {
 	
+	fileprivate var loadingArticles = false
+	
 	var state: GuideArticles = GuideArticlesReducer().initialState {
 		didSet {
 			tableView.reloadData()
+			loadingArticles = false
 		}
 	}
 
@@ -33,11 +36,25 @@ class ArticlesTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 	
-	func setup(){
+	fileprivate func setup(){
 		self.title = "Articles"
 		let nib = UINib(nibName: ArticleCell.identifier, bundle: nil)
 		tableView.register(nib, forCellReuseIdentifier: ArticleCell.identifier)
+		tableView.estimatedRowHeight = 60.0
+		tableView.rowHeight = UITableViewAutomaticDimension
 	}
+	
+	fileprivate func askForMoreArticles() {
+		if !loadingArticles,
+			let nextPage = state.nextPage {
+			loadingArticles = true
+			print("get for more articles with url: \(nextPage)")
+			store.dispatch(action: FecthArticlesNextPageAsyncAction(url: nextPage))
+		}
+	}
+	
+	
+	
 
     // MARK: - Table view data source
 
@@ -55,9 +72,27 @@ class ArticlesTableViewController: UITableViewController {
 
         // Configure the cell...
 		let article = state.articles[indexPath.row]
-        cell.titleLabel.text = article.title
+        cell.configureCell(article: article)
         
         return cell
     }
+	
+	override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		let offsetY = scrollView.contentOffset.y
+		let contentHeight = scrollView.contentSize.height
+		if offsetY > contentHeight - scrollView.frame.size.height {
+			askForMoreArticles()
+		}
+	}
 
 }
+
+
+
+
+
+
+
+
+
+

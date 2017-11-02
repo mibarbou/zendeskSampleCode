@@ -14,7 +14,7 @@ struct ArticlesResponse: Gloss.Decodable {
     let page:               Int?
     let pageCount:          Int?
     let perPage:            Int?
-    let previousPage:       Int?
+    let previousPage:       String?
     let sortBy:             String?
     let sortOrder:          String?
     let articles:           [ArticleResponse]?

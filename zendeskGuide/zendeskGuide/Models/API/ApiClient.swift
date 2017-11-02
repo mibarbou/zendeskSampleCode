@@ -33,7 +33,7 @@ class ApiClient {
                                                         fail(.parserError)
                                                         return
                                                     }
-                                                    debugPrint(theJson)
+                                                    //debugPrint(theJson)
                                                     success(theJson)
                                                 case .failure(let error):
                                                     print("Request failed with error: \(error)")
@@ -51,16 +51,13 @@ class ApiClient {
 
 //MARK: Public methods
 extension ApiClient {
+	
     public static func articles(success: @escaping (GuideArticles) -> (),
                                 fail: @escaping (ApiError) -> ()) {
         
         self.request(endpoint: .articles,
                      success: { (response) in
-						guard let articlesResponse = ArticlesResponse(json: response) else {
-							fail(.parserError)
-							return
-						}
-						guard let guideArticles = ArticlesMapper.toGuideArticles(response: articlesResponse) else {
+						guard let guideArticles = self.parseArticles(response: response) else {
 							fail(.parserError)
 							return
 						}
@@ -69,4 +66,62 @@ extension ApiClient {
             fail(error)
         }
     }
+	
+	public static func articlesNextPage(url: URL,
+										success: @escaping (GuideArticles) -> (),
+										fail: @escaping (ApiError) -> ()) {
+		
+		self.request(endpoint: .articlesNextPage(url: url),
+					 success: { (response) in
+						guard let guideArticles = self.parseArticles(response: response) else {
+							fail(.parserError)
+							return
+						}
+						success(guideArticles)
+		}) { (error) in
+			fail(error)
+		}
+		
+	}
 }
+
+
+//MARK: - Utils
+extension ApiClient {
+	fileprivate static func parseArticles(response: [String : Any]) -> GuideArticles? {
+		guard let articlesResponse = ArticlesResponse(json: response) else {
+			return nil
+		}
+		guard let guideArticles = ArticlesMapper.toGuideArticles(response: articlesResponse) else {
+			return nil
+		}
+		return guideArticles
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
