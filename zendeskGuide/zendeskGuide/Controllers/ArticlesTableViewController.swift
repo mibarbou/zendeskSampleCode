@@ -9,9 +9,7 @@
 import UIKit
 
 class ArticlesTableViewController: UITableViewController {
-	
-	fileprivate var loadingArticles = false
-	
+		
 	var state: GuideArticlesState = GuideArticlesReducer().initialState {
 		didSet {
 			tableView.reloadData()

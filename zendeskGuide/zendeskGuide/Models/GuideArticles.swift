@@ -9,6 +9,6 @@
 import Foundation
 
 struct GuideArticles {
-	var articles: 	[Article]
-	var nextPage:	URL?
+	let articles: 	[Article]
+	let nextPage:	URL?
 }

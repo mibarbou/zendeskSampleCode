@@ -20,6 +20,17 @@
 		AD2106131FAB649900FFEACF /* ArticlesNextPageFetchedAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2106121FAB649900FFEACF /* ArticlesNextPageFetchedAction.swift */; };
 		AD2106171FAC486100FFEACF /* ChangeLoadingStatusAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2106161FAC486100FFEACF /* ChangeLoadingStatusAction.swift */; };
 		AD2106191FAC514B00FFEACF /* GuideArticlesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2106181FAC514B00FFEACF /* GuideArticlesState.swift */; };
+		AD21061B1FAC569500FFEACF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AD21061A1FAC569500FFEACF /* Podfile */; };
+		AD21061D1FAC56A700FFEACF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AD21061C1FAC56A700FFEACF /* README.md */; };
+		AD21061F1FAC577400FFEACF /* articles.json in Resources */ = {isa = PBXBuildFile; fileRef = AD21061E1FAC577400FFEACF /* articles.json */; };
+		AD29EB351FAC92B7008DBBB2 /* UtilTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29EB341FAC92B7008DBBB2 /* UtilTest.swift */; };
+		AD29EB361FAC94E1008DBBB2 /* ArticlesMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21060C1FAB35F000FFEACF /* ArticlesMapper.swift */; };
+		AD29EB371FAC950B008DBBB2 /* ArticleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDAD341FA90880004A683A /* ArticleResponse.swift */; };
+		AD29EB381FAC950E008DBBB2 /* ArticlesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDAD321FA907E2004A683A /* ArticlesResponse.swift */; };
+		AD29EB391FAC9521008DBBB2 /* GuideArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2105FA1FAB2D8100FFEACF /* GuideArticles.swift */; };
+		AD29EB3A1FAC9525008DBBB2 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21060E1FAB37DF00FFEACF /* Article.swift */; };
+		AD29EB3B1FAC9530008DBBB2 /* NSAttributedString+html.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F2A3F1FAB8F19005EED8B /* NSAttributedString+html.swift */; };
+		AD29EB3C1FAC9533008DBBB2 /* DateFormatter+update.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F2A411FAB97C7005EED8B /* DateFormatter+update.swift */; };
 		D04F2A401FAB8F19005EED8B /* NSAttributedString+html.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F2A3F1FAB8F19005EED8B /* NSAttributedString+html.swift */; };
 		D04F2A421FAB97C7005EED8B /* DateFormatter+update.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F2A411FAB97C7005EED8B /* DateFormatter+update.swift */; };
 		D0DDAD001FA8E50B004A683A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDACFF1FA8E50B004A683A /* AppDelegate.swift */; };
@@ -60,6 +71,10 @@
 		AD2106121FAB649900FFEACF /* ArticlesNextPageFetchedAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesNextPageFetchedAction.swift; sourceTree = "<group>"; };
 		AD2106161FAC486100FFEACF /* ChangeLoadingStatusAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLoadingStatusAction.swift; sourceTree = "<group>"; };
 		AD2106181FAC514B00FFEACF /* GuideArticlesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideArticlesState.swift; sourceTree = "<group>"; };
+		AD21061A1FAC569500FFEACF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		AD21061C1FAC56A700FFEACF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		AD21061E1FAC577400FFEACF /* articles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articles.json; sourceTree = "<group>"; };
+		AD29EB341FAC92B7008DBBB2 /* UtilTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilTest.swift; sourceTree = "<group>"; };
 		B1578E5E15FB6C6E3D751083 /* Pods-zendeskGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zendeskGuide.release.xcconfig"; path = "Pods/Target Support Files/Pods-zendeskGuide/Pods-zendeskGuide.release.xcconfig"; sourceTree = "<group>"; };
 		C601B4AB008473CBA69A0892 /* Pods-zendeskGuideTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zendeskGuideTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-zendeskGuideTests/Pods-zendeskGuideTests.release.xcconfig"; sourceTree = "<group>"; };
 		D04F2A3F1FAB8F19005EED8B /* NSAttributedString+html.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+html.swift"; sourceTree = "<group>"; };
@@ -151,6 +166,14 @@
 			path = Mappers;
 			sourceTree = "<group>";
 		};
+		AD29EB331FAC9208008DBBB2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				AD29EB341FAC92B7008DBBB2 /* UtilTest.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		C43A3AB4E9558793BD38C622 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +195,8 @@
 		D0DDACF31FA8E50B004A683A = {
 			isa = PBXGroup;
 			children = (
+				AD21061C1FAC56A700FFEACF /* README.md */,
+				AD21061A1FAC569500FFEACF /* Podfile */,
 				D0DDACFE1FA8E50B004A683A /* zendeskGuide */,
 				D0DDAD0E1FA8E50B004A683A /* zendeskGuideTests */,
 				D0DDACFD1FA8E50B004A683A /* Products */,
@@ -211,8 +236,10 @@
 		D0DDAD0E1FA8E50B004A683A /* zendeskGuideTests */ = {
 			isa = PBXGroup;
 			children = (
+				AD29EB331FAC9208008DBBB2 /* Util */,
 				D0DDAD0F1FA8E50B004A683A /* zendeskGuideTests.swift */,
 				D0DDAD111FA8E50B004A683A /* Info.plist */,
+				AD21061E1FAC577400FFEACF /* articles.json */,
 			);
 			path = zendeskGuideTests;
 			sourceTree = "<group>";
@@ -356,6 +383,8 @@
 			files = (
 				D0DDAD021FA8E50B004A683A /* Assets.xcassets in Resources */,
 				D0DDAD231FA8E967004A683A /* ArticleCell.xib in Resources */,
+				AD21061D1FAC56A700FFEACF /* README.md in Resources */,
+				AD21061B1FAC569500FFEACF /* Podfile in Resources */,
 				D0DDAD051FA8E50B004A683A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD21061F1FAC577400FFEACF /* articles.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,7 +538,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD29EB3B1FAC9530008DBBB2 /* NSAttributedString+html.swift in Sources */,
+				AD29EB3A1FAC9525008DBBB2 /* Article.swift in Sources */,
+				AD29EB3C1FAC9533008DBBB2 /* DateFormatter+update.swift in Sources */,
 				D0DDAD101FA8E50B004A683A /* zendeskGuideTests.swift in Sources */,
+				AD29EB361FAC94E1008DBBB2 /* ArticlesMapper.swift in Sources */,
+				AD29EB351FAC92B7008DBBB2 /* UtilTest.swift in Sources */,
+				AD29EB391FAC9521008DBBB2 /* GuideArticles.swift in Sources */,
+				AD29EB371FAC950B008DBBB2 /* ArticleResponse.swift in Sources */,
+				AD29EB381FAC950E008DBBB2 /* ArticlesResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
