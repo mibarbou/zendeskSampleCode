@@ -12,10 +12,9 @@ class ArticlesTableViewController: UITableViewController {
 	
 	fileprivate var loadingArticles = false
 	
-	var state: GuideArticles = GuideArticlesReducer().initialState {
+	var state: GuideArticlesState = GuideArticlesReducer().initialState {
 		didSet {
 			tableView.reloadData()
-			loadingArticles = false
 		}
 	}
 
@@ -23,7 +22,7 @@ class ArticlesTableViewController: UITableViewController {
         super.viewDidLoad()
 		setup()
 		
-		store.addListener(forStateType: GuideArticles.self) { [weak self] newState in
+		store.addListener(forStateType: GuideArticlesState.self) { [weak self] newState in
 			self?.state = newState
 		}.linkLifeCycleTo(object: self)
 		
@@ -44,18 +43,7 @@ class ArticlesTableViewController: UITableViewController {
 		tableView.estimatedRowHeight = 60.0
 		tableView.rowHeight = UITableViewAutomaticDimension
 	}
-	
-	fileprivate func askForMoreArticles() {
-		if !loadingArticles,
-			let nextPage = state.nextPage {
-			loadingArticles = true
-			print("get for more articles with url: \(nextPage)")
-			store.dispatch(action: FecthArticlesNextPageAsyncAction(url: nextPage))
-		}
-	}
-	
-	
-	
+
 
     // MARK: - Table view data source
 
@@ -81,8 +69,12 @@ class ArticlesTableViewController: UITableViewController {
 	override func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		let offsetY = scrollView.contentOffset.y
 		let contentHeight = scrollView.contentSize.height
-		if offsetY > contentHeight - scrollView.frame.size.height {
-			askForMoreArticles()
+		if offsetY > contentHeight - scrollView.frame.size.height,
+			let nextPage = state.nextPage,
+			!state.isLoading {
+			print("get more articles with url: \(nextPage)")
+			store.dispatch(action: FecthArticlesNextPageAsyncAction(url: nextPage))
+			store.dispatch(action: ChangeLoadingStatusAction(isLoading: state.isLoading))
 		}
 	}
 

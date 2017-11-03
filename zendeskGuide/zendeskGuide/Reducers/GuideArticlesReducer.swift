@@ -10,19 +10,28 @@ import Foundation
 import Suas
 
 struct GuideArticlesReducer: Reducer {
-	var initialState = GuideArticles(articles: [], nextPage: nil)
+	var initialState = GuideArticlesState(articles: [], nextPage: nil, isLoading: true)
 	
-	func reduce(state: GuideArticles, action: Action) -> GuideArticles? {
+	func reduce(state: GuideArticlesState, action: Action) -> GuideArticlesState? {
+		
+		if let action = action as? ChangeLoadingStatusAction {
+			let isLoading = !action.isLoading
+			return GuideArticlesState(articles: state.articles,
+									  nextPage: state.nextPage,
+									  isLoading: isLoading)
+		}
 		
 		if let action = action as? ArticlesFetchedAction {
-			return GuideArticles(articles: action.articles,
-								 nextPage: action.nextPage)
+			return GuideArticlesState(articles: action.articles,
+									  nextPage: action.nextPage,
+									  isLoading: false)
 		}
 		
 		if let action = action as? ArticlesNextPageFetchedAction {
 			let totalArticles = state.articles + action.articles
-			return GuideArticles(articles: totalArticles,
-								 nextPage: action.nextPage)
+			return GuideArticlesState(articles: totalArticles,
+									  nextPage: action.nextPage,
+									  isLoading: false)
 		}
 		return nil
 	}
