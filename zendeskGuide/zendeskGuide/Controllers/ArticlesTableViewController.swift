@@ -72,7 +72,7 @@ class ArticlesTableViewController: UITableViewController {
 			!state.isLoading {
 			print("get more articles with url: \(nextPage)")
 			store.dispatch(action: FecthArticlesNextPageAsyncAction(url: nextPage))
-			store.dispatch(action: ChangeLoadingStatusAction(isLoading: state.isLoading))
+			store.dispatch(action: ChangeLoadingStatusAction())
 		}
 	}
 

@@ -8,11 +8,13 @@
 
 import Foundation
 
-struct GuideArticles: Equatable {
-    
+struct GuideArticles {
 	let articles: 	[Article]
 	let nextPage:	URL?
-    
+}
+
+//MARK: - Equatable
+extension GuideArticles: Equatable {
     static func ==(lhs: GuideArticles, rhs: GuideArticles) -> Bool {
         return (lhs.articles == rhs.articles) && (lhs.proxyForComparison == rhs.proxyForComparison)
     }

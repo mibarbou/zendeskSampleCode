@@ -10,5 +10,4 @@ import Foundation
 import Suas
 
 struct ChangeLoadingStatusAction: Action {
-	let isLoading: Bool
 }

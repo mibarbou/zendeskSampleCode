@@ -14,8 +14,8 @@ struct GuideArticlesReducer: Reducer {
 	
 	func reduce(state: GuideArticlesState, action: Action) -> GuideArticlesState? {
 		
-		if let action = action as? ChangeLoadingStatusAction {
-			let isLoading = !action.isLoading
+		if let _ = action as? ChangeLoadingStatusAction {
+			let isLoading = !state.isLoading
 			return GuideArticlesState(articles: state.articles,
 									  nextPage: state.nextPage,
 									  isLoading: isLoading)

@@ -11,5 +11,20 @@ import Foundation
 struct GuideArticlesState {
 	var articles: 	[Article]
 	var nextPage:	URL?
-	var isLoading: 	Bool
+	var isLoading: 	Bool  
+}
+
+//MARK: - Equatable
+extension GuideArticlesState: Equatable {
+    static func ==(lhs: GuideArticlesState, rhs: GuideArticlesState) -> Bool {
+        return (lhs.articles == rhs.articles) &&
+            (lhs.proxyForComparison == rhs.proxyForComparison) &&
+            lhs.isLoading == rhs.isLoading
+    }
+    
+    var proxyForComparison : String{
+        get{
+            return "\(nextPage?.absoluteString ?? "")"
+        }
+    }
 }

@@ -14,7 +14,7 @@ class zendeskGuideTests: XCTestCase {
 	let json: [String: Any] = UtilTest.readJson(fileName: "articles")!
     let json2: [String: Any] = UtilTest.readJson(fileName: "articles2")!
     let json3: [String: Any] = UtilTest.readJson(fileName: "articles3")!
-  
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -128,4 +128,43 @@ class zendeskGuideTests: XCTestCase {
         XCTAssertEqual(guideArticles!, expectedGuideArticles)
     }
     
+    
+    func testGuideArticlesReducer() {
+        let initialState = GuideArticlesReducer().initialState
+        
+        let guideArticlesFirst = ArticlesMapper().getGuideArticles(response: self.json2)!
+        let expectedFirstState = GuideArticlesState(articles: guideArticlesFirst.articles,
+                                                    nextPage: guideArticlesFirst.nextPage,
+                                                    isLoading: false)
+        
+        let actionFirstPage = ArticlesFetchedAction(articles: guideArticlesFirst.articles,
+                                                    nextPage: guideArticlesFirst.nextPage,
+                                                    isLoading: initialState.isLoading)
+        
+        let firstState = GuideArticlesReducer().reduce(state: initialState, action: actionFirstPage)!
+        XCTAssertEqual(firstState, expectedFirstState)
+        
+        let guideArticlesSecond = ArticlesMapper().getGuideArticles(response: self.json3)!
+        let allArticles = guideArticlesFirst.articles + guideArticlesSecond.articles
+        let expectedSecondState = GuideArticlesState(articles: allArticles,
+                                                    nextPage: nil,
+                                                    isLoading: false)
+        
+        let actionNextPage = ArticlesNextPageFetchedAction(articles: guideArticlesSecond.articles,
+                                                             nextPage: guideArticlesSecond.nextPage,
+                                                             isLoading: firstState.isLoading)
+        let secondState = GuideArticlesReducer().reduce(state: firstState, action: actionNextPage)!
+        XCTAssertEqual(secondState, expectedSecondState)
+        
+        
+        let expectedChangedStatusState = GuideArticlesState(articles: initialState.articles,
+                                                            nextPage: initialState.nextPage,
+                                                            isLoading: false)
+        let changedStatusState = GuideArticlesReducer().reduce(state: initialState, action: ChangeLoadingStatusAction())
+        XCTAssertEqual(changedStatusState, expectedChangedStatusState)
+  
+    }
+    
 }
+
+

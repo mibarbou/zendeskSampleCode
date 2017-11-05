@@ -8,12 +8,14 @@
 
 import Foundation
 
-struct Article: Equatable {
-    
+struct Article {
 	let title: 		String
 	let body:		NSAttributedString
 	let updatedAt:	Date?
-    
+}
+
+//MARK: - Equatable
+extension Article: Equatable {
     static func ==(lhs: Article, rhs: Article) -> Bool {
         return lhs.proxyForComparison == rhs.proxyForComparison
     }

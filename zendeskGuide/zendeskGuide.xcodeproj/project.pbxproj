@@ -47,6 +47,11 @@
 		D0DDAD301FA8FE32004A683A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDAD2F1FA8FE32004A683A /* Endpoint.swift */; };
 		D0DDAD331FA907E2004A683A /* ArticlesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDAD321FA907E2004A683A /* ArticlesResponse.swift */; };
 		D0DDAD351FA90880004A683A /* ArticleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDAD341FA90880004A683A /* ArticleResponse.swift */; };
+		D0EBB2321FAF19D200930834 /* GuideArticlesReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2106051FAB327800FFEACF /* GuideArticlesReducer.swift */; };
+		D0EBB2331FAF1DBF00930834 /* ArticlesFetchedAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2106031FAB31D700FFEACF /* ArticlesFetchedAction.swift */; };
+		D0EBB2341FAF1DC300930834 /* ArticlesNextPageFetchedAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2106121FAB649900FFEACF /* ArticlesNextPageFetchedAction.swift */; };
+		D0EBB2351FAF1DF200930834 /* ChangeLoadingStatusAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2106161FAC486100FFEACF /* ChangeLoadingStatusAction.swift */; };
+		D0EBB2361FAF21C100930834 /* GuideArticlesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2106181FAC514B00FFEACF /* GuideArticlesState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -556,10 +561,15 @@
 			files = (
 				AD29EB3B1FAC9530008DBBB2 /* NSAttributedString+html.swift in Sources */,
 				AD29EB3A1FAC9525008DBBB2 /* Article.swift in Sources */,
+				D0EBB2321FAF19D200930834 /* GuideArticlesReducer.swift in Sources */,
+				D0EBB2361FAF21C100930834 /* GuideArticlesState.swift in Sources */,
 				AD29EB3C1FAC9533008DBBB2 /* DateFormatter+update.swift in Sources */,
 				D0DDAD101FA8E50B004A683A /* zendeskGuideTests.swift in Sources */,
 				AD29EB361FAC94E1008DBBB2 /* ArticlesMapper.swift in Sources */,
+				D0EBB2351FAF1DF200930834 /* ChangeLoadingStatusAction.swift in Sources */,
+				D0EBB2341FAF1DC300930834 /* ArticlesNextPageFetchedAction.swift in Sources */,
 				AD29EB351FAC92B7008DBBB2 /* UtilTest.swift in Sources */,
+				D0EBB2331FAF1DBF00930834 /* ArticlesFetchedAction.swift in Sources */,
 				AD29EB391FAC9521008DBBB2 /* GuideArticles.swift in Sources */,
 				AD29EB371FAC950B008DBBB2 /* ArticleResponse.swift in Sources */,
 				AD29EB381FAC950E008DBBB2 /* ArticlesResponse.swift in Sources */,
