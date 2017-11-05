@@ -33,6 +33,8 @@
 		AD29EB3C1FAC9533008DBBB2 /* DateFormatter+update.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F2A411FAB97C7005EED8B /* DateFormatter+update.swift */; };
 		D04F2A401FAB8F19005EED8B /* NSAttributedString+html.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F2A3F1FAB8F19005EED8B /* NSAttributedString+html.swift */; };
 		D04F2A421FAB97C7005EED8B /* DateFormatter+update.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F2A411FAB97C7005EED8B /* DateFormatter+update.swift */; };
+		D0CA4ECF1FAEF7E2005D2587 /* articles2.json in Resources */ = {isa = PBXBuildFile; fileRef = D0CA4ECE1FAEF7E2005D2587 /* articles2.json */; };
+		D0CA4ED11FAEF801005D2587 /* articles3.json in Resources */ = {isa = PBXBuildFile; fileRef = D0CA4ED01FAEF801005D2587 /* articles3.json */; };
 		D0DDAD001FA8E50B004A683A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDACFF1FA8E50B004A683A /* AppDelegate.swift */; };
 		D0DDAD021FA8E50B004A683A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0DDAD011FA8E50B004A683A /* Assets.xcassets */; };
 		D0DDAD051FA8E50B004A683A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DDAD031FA8E50B004A683A /* LaunchScreen.storyboard */; };
@@ -79,6 +81,8 @@
 		C601B4AB008473CBA69A0892 /* Pods-zendeskGuideTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zendeskGuideTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-zendeskGuideTests/Pods-zendeskGuideTests.release.xcconfig"; sourceTree = "<group>"; };
 		D04F2A3F1FAB8F19005EED8B /* NSAttributedString+html.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+html.swift"; sourceTree = "<group>"; };
 		D04F2A411FAB97C7005EED8B /* DateFormatter+update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+update.swift"; sourceTree = "<group>"; };
+		D0CA4ECE1FAEF7E2005D2587 /* articles2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articles2.json; sourceTree = "<group>"; };
+		D0CA4ED01FAEF801005D2587 /* articles3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articles3.json; sourceTree = "<group>"; };
 		D0DDACFC1FA8E50B004A683A /* zendeskGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zendeskGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0DDACFF1FA8E50B004A683A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0DDAD011FA8E50B004A683A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -236,10 +240,10 @@
 		D0DDAD0E1FA8E50B004A683A /* zendeskGuideTests */ = {
 			isa = PBXGroup;
 			children = (
+				D0EBB2311FAF10D300930834 /* jsonMocks */,
 				AD29EB331FAC9208008DBBB2 /* Util */,
 				D0DDAD0F1FA8E50B004A683A /* zendeskGuideTests.swift */,
 				D0DDAD111FA8E50B004A683A /* Info.plist */,
-				AD21061E1FAC577400FFEACF /* articles.json */,
 			);
 			path = zendeskGuideTests;
 			sourceTree = "<group>";
@@ -290,6 +294,16 @@
 				D0DDAD341FA90880004A683A /* ArticleResponse.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		D0EBB2311FAF10D300930834 /* jsonMocks */ = {
+			isa = PBXGroup;
+			children = (
+				AD21061E1FAC577400FFEACF /* articles.json */,
+				D0CA4ECE1FAEF7E2005D2587 /* articles2.json */,
+				D0CA4ED01FAEF801005D2587 /* articles3.json */,
+			);
+			path = jsonMocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,7 +407,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0CA4ED11FAEF801005D2587 /* articles3.json in Resources */,
 				AD21061F1FAC577400FFEACF /* articles.json in Resources */,
+				D0CA4ECF1FAEF7E2005D2587 /* articles2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

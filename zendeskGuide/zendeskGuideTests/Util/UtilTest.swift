@@ -16,14 +16,14 @@ struct UtilTest {
 				let json = try JSONSerialization.jsonObject(with: data, options: [])
 				if let object = json as? [String: Any] {
 					// json is a dictionary
-					print(object)
+					//print(object)
 					return object
-				} else if let object = json as? [Any] {
+				} else if let _ = json as? [Any] {
 					// json is an array
-					print(object)
+					//print(object)
 					return nil
 				} else {
-					print("JSON is invalid")
+					//print("JSON is invalid")
 					return nil
 				}
 			} else {

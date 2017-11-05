@@ -8,8 +8,19 @@
 
 import Foundation
 
-struct Article {
+struct Article: Equatable {
+    
 	let title: 		String
 	let body:		NSAttributedString
 	let updatedAt:	Date?
+    
+    static func ==(lhs: Article, rhs: Article) -> Bool {
+        return lhs.proxyForComparison == rhs.proxyForComparison
+    }
+    
+    var proxyForComparison : String{
+        get{
+            return "\(String(describing: title))" + "\(String(describing: body.string))" + "\(String(describing: updatedAt?.timeIntervalSince1970 ?? 0))"
+        }
+    }
 }

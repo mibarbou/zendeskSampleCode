@@ -37,7 +37,7 @@ struct ArticlesMapper {
 		return article
 	}
     
-    private func getDate(string: String?) -> Date? {
+    public func getDate(string: String?) -> Date? {
         guard let dateString = string else { return nil }
         let formatter = DateFormatter.updateArticle
         return formatter.date(from: dateString)

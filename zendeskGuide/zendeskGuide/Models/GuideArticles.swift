@@ -8,7 +8,18 @@
 
 import Foundation
 
-struct GuideArticles {
+struct GuideArticles: Equatable {
+    
 	let articles: 	[Article]
 	let nextPage:	URL?
+    
+    static func ==(lhs: GuideArticles, rhs: GuideArticles) -> Bool {
+        return (lhs.articles == rhs.articles) && (lhs.proxyForComparison == rhs.proxyForComparison)
+    }
+    
+    var proxyForComparison : String{
+        get{
+            return "\(nextPage?.absoluteString ?? "")"
+        }
+    }
 }
