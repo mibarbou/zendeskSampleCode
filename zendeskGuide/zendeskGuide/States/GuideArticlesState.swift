@@ -9,9 +9,11 @@
 import Foundation
 
 struct GuideArticlesState {
-	var articles: 	[Article]
-	var nextPage:	URL?
-	var isLoading: 	Bool  
+	var articles: 	        [Article]
+    var filteredArticles:   [Article]
+	var nextPage:	        URL?
+	var isLoading: 	        Bool
+    var isFiltering:        Bool
 }
 
 //MARK: - Equatable
