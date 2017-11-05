@@ -20,8 +20,7 @@ struct FecthArticlesNextPageAsyncAction: AsyncAction {
 		ApiClient.articlesNextPage(url: self.url,
 								   success: { (guideArticles) in
 									dispatch(ArticlesNextPageFetchedAction(articles: guideArticles.articles,
-																		   nextPage: guideArticles.nextPage,
-																		   isLoading: false))
+																		   nextPage: guideArticles.nextPage))
 		}) { (error) in
 			print(error)
 		}

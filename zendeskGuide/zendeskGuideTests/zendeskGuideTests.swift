@@ -138,8 +138,7 @@ class zendeskGuideTests: XCTestCase {
                                                     isLoading: false)
         
         let actionFirstPage = ArticlesFetchedAction(articles: guideArticlesFirst.articles,
-                                                    nextPage: guideArticlesFirst.nextPage,
-                                                    isLoading: initialState.isLoading)
+                                                    nextPage: guideArticlesFirst.nextPage)
         
         let firstState = GuideArticlesReducer().reduce(state: initialState, action: actionFirstPage)!
         XCTAssertEqual(firstState, expectedFirstState)
@@ -151,8 +150,7 @@ class zendeskGuideTests: XCTestCase {
                                                     isLoading: false)
         
         let actionNextPage = ArticlesNextPageFetchedAction(articles: guideArticlesSecond.articles,
-                                                             nextPage: guideArticlesSecond.nextPage,
-                                                             isLoading: firstState.isLoading)
+                                                             nextPage: guideArticlesSecond.nextPage)
         let secondState = GuideArticlesReducer().reduce(state: firstState, action: actionNextPage)!
         XCTAssertEqual(secondState, expectedSecondState)
         

@@ -25,7 +25,6 @@ class ArticlesTableViewController: UITableViewController {
 		}.linkLifeCycleTo(object: self)
 		
 		store.dispatch(action: FetchArticlesAsyncAction())
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +39,7 @@ class ArticlesTableViewController: UITableViewController {
 		tableView.register(nib, forCellReuseIdentifier: ArticleCell.identifier)
 		tableView.estimatedRowHeight = 60.0
 		tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.allowsSelection = false
 	}
 
 

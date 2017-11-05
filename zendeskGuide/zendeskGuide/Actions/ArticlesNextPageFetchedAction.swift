@@ -12,5 +12,4 @@ import Suas
 struct ArticlesNextPageFetchedAction: Action {
 	let articles: [Article]
 	let nextPage: URL?
-	let isLoading: 	Bool
 }

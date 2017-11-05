@@ -14,8 +14,7 @@ struct FetchArticlesAsyncAction: AsyncAction {
 	func execute(getState: @escaping GetStateFunction, dispatch: @escaping DispatchFunction) {
 		ApiClient.articles(success: { (guideArticles) in
 			dispatch(ArticlesFetchedAction(articles: guideArticles.articles,
-										   nextPage: guideArticles.nextPage,
-										   isLoading: false))
+										   nextPage: guideArticles.nextPage))
 		}) { (error) in
 			print(error)
 		}
