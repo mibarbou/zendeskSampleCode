@@ -31,6 +31,10 @@
 		AD29EB3A1FAC9525008DBBB2 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21060E1FAB37DF00FFEACF /* Article.swift */; };
 		AD29EB3B1FAC9530008DBBB2 /* NSAttributedString+html.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F2A3F1FAB8F19005EED8B /* NSAttributedString+html.swift */; };
 		AD29EB3C1FAC9533008DBBB2 /* DateFormatter+update.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F2A411FAB97C7005EED8B /* DateFormatter+update.swift */; };
+		ADE563F21FB03FA500A927F4 /* FilterArticlesAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011B9091FAF86D100DC67E4 /* FilterArticlesAction.swift */; };
+		ADE563F31FB03FA800A927F4 /* ChangeFilterStatusAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011B90B1FAF975F00DC67E4 /* ChangeFilterStatusAction.swift */; };
+		D011B90A1FAF86D100DC67E4 /* FilterArticlesAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011B9091FAF86D100DC67E4 /* FilterArticlesAction.swift */; };
+		D011B90C1FAF975F00DC67E4 /* ChangeFilterStatusAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011B90B1FAF975F00DC67E4 /* ChangeFilterStatusAction.swift */; };
 		D04F2A401FAB8F19005EED8B /* NSAttributedString+html.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F2A3F1FAB8F19005EED8B /* NSAttributedString+html.swift */; };
 		D04F2A421FAB97C7005EED8B /* DateFormatter+update.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F2A411FAB97C7005EED8B /* DateFormatter+update.swift */; };
 		D0CA4ECF1FAEF7E2005D2587 /* articles2.json in Resources */ = {isa = PBXBuildFile; fileRef = D0CA4ECE1FAEF7E2005D2587 /* articles2.json */; };
@@ -84,6 +88,8 @@
 		AD29EB341FAC92B7008DBBB2 /* UtilTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilTest.swift; sourceTree = "<group>"; };
 		B1578E5E15FB6C6E3D751083 /* Pods-zendeskGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zendeskGuide.release.xcconfig"; path = "Pods/Target Support Files/Pods-zendeskGuide/Pods-zendeskGuide.release.xcconfig"; sourceTree = "<group>"; };
 		C601B4AB008473CBA69A0892 /* Pods-zendeskGuideTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zendeskGuideTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-zendeskGuideTests/Pods-zendeskGuideTests.release.xcconfig"; sourceTree = "<group>"; };
+		D011B9091FAF86D100DC67E4 /* FilterArticlesAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterArticlesAction.swift; sourceTree = "<group>"; };
+		D011B90B1FAF975F00DC67E4 /* ChangeFilterStatusAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFilterStatusAction.swift; sourceTree = "<group>"; };
 		D04F2A3F1FAB8F19005EED8B /* NSAttributedString+html.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+html.swift"; sourceTree = "<group>"; };
 		D04F2A411FAB97C7005EED8B /* DateFormatter+update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+update.swift"; sourceTree = "<group>"; };
 		D0CA4ECE1FAEF7E2005D2587 /* articles2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articles2.json; sourceTree = "<group>"; };
@@ -155,6 +161,8 @@
 				AD2106031FAB31D700FFEACF /* ArticlesFetchedAction.swift */,
 				AD2106121FAB649900FFEACF /* ArticlesNextPageFetchedAction.swift */,
 				AD2106161FAC486100FFEACF /* ChangeLoadingStatusAction.swift */,
+				D011B9091FAF86D100DC67E4 /* FilterArticlesAction.swift */,
+				D011B90B1FAF975F00DC67E4 /* ChangeFilterStatusAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -533,8 +541,10 @@
 			files = (
 				D0DDAD331FA907E2004A683A /* ArticlesResponse.swift in Sources */,
 				AD2106061FAB327800FFEACF /* GuideArticlesReducer.swift in Sources */,
+				D011B90C1FAF975F00DC67E4 /* ChangeFilterStatusAction.swift in Sources */,
 				D0DDAD1B1FA8E572004A683A /* ArticlesTableViewController.swift in Sources */,
 				D0DDAD001FA8E50B004A683A /* AppDelegate.swift in Sources */,
+				D011B90A1FAF86D100DC67E4 /* FilterArticlesAction.swift in Sources */,
 				D04F2A421FAB97C7005EED8B /* DateFormatter+update.swift in Sources */,
 				AD2105FB1FAB2D8100FFEACF /* GuideArticles.swift in Sources */,
 				D0DDAD351FA90880004A683A /* ArticleResponse.swift in Sources */,
@@ -566,6 +576,8 @@
 				AD29EB3C1FAC9533008DBBB2 /* DateFormatter+update.swift in Sources */,
 				D0DDAD101FA8E50B004A683A /* zendeskGuideTests.swift in Sources */,
 				AD29EB361FAC94E1008DBBB2 /* ArticlesMapper.swift in Sources */,
+				ADE563F31FB03FA800A927F4 /* ChangeFilterStatusAction.swift in Sources */,
+				ADE563F21FB03FA500A927F4 /* FilterArticlesAction.swift in Sources */,
 				D0EBB2351FAF1DF200930834 /* ChangeLoadingStatusAction.swift in Sources */,
 				D0EBB2341FAF1DC300930834 /* ArticlesNextPageFetchedAction.swift in Sources */,
 				AD29EB351FAC92B7008DBBB2 /* UtilTest.swift in Sources */,

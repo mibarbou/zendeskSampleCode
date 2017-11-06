@@ -9,6 +9,8 @@
 import UIKit
 
 class ArticlesTableViewController: UITableViewController {
+    
+    let searchController = UISearchController(searchResultsController: nil)
 		
 	var state: GuideArticlesState = GuideArticlesReducer().initialState {
 		didSet {
@@ -40,6 +42,13 @@ class ArticlesTableViewController: UITableViewController {
 		tableView.estimatedRowHeight = 60.0
 		tableView.rowHeight = UITableViewAutomaticDimension
         tableView.allowsSelection = false
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Articles by Title"
+		searchController.searchBar.delegate = self
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
 	}
 
 
@@ -50,6 +59,9 @@ class ArticlesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if state.isFiltering {
+            return state.filteredArticles.count
+        }
         return state.articles.count
     }
 
@@ -58,24 +70,49 @@ class ArticlesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: ArticleCell.identifier, for: indexPath) as! ArticleCell
 
         // Configure the cell...
-		let article = state.articles[indexPath.row]
+        var article: Article
+        if state.isFiltering {
+            article = state.filteredArticles[indexPath.row]
+        } else {
+            article = state.articles[indexPath.row]
+        }
         cell.configureCell(article: article)
         
         return cell
     }
 	
+	//MARK: - UIScrollView Delegate
 	override func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		let offsetY = scrollView.contentOffset.y
 		let contentHeight = scrollView.contentSize.height
 		if offsetY > contentHeight - scrollView.frame.size.height,
 			let nextPage = state.nextPage,
-			!state.isLoading {
+			!state.isLoading,
+            !state.isFiltering {
 			print("get more articles with url: \(nextPage)")
 			store.dispatch(action: FecthArticlesNextPageAsyncAction(url: nextPage))
 			store.dispatch(action: ChangeLoadingStatusAction())
 		}
 	}
 
+}
+
+
+extension ArticlesTableViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        if searchController.isActive {
+            store.dispatch(action: ChangeFilterStatusAction(isFiltering: true))
+        } else {
+            store.dispatch(action: ChangeFilterStatusAction(isFiltering: false))
+        }
+    }
+	
+	// MARK: - UISearchBar Delegate
+	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+		store.dispatch(action: FilterArticlesAction(query: searchController.searchBar.text))
+	}
+	
 }
 
 
