@@ -31,6 +31,8 @@
 		AD29EB3A1FAC9525008DBBB2 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21060E1FAB37DF00FFEACF /* Article.swift */; };
 		AD29EB3B1FAC9530008DBBB2 /* NSAttributedString+html.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F2A3F1FAB8F19005EED8B /* NSAttributedString+html.swift */; };
 		AD29EB3C1FAC9533008DBBB2 /* DateFormatter+update.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F2A411FAB97C7005EED8B /* DateFormatter+update.swift */; };
+		ADE563F21FB03FA500A927F4 /* FilterArticlesAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011B9091FAF86D100DC67E4 /* FilterArticlesAction.swift */; };
+		ADE563F31FB03FA800A927F4 /* ChangeFilterStatusAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011B90B1FAF975F00DC67E4 /* ChangeFilterStatusAction.swift */; };
 		D011B90A1FAF86D100DC67E4 /* FilterArticlesAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011B9091FAF86D100DC67E4 /* FilterArticlesAction.swift */; };
 		D011B90C1FAF975F00DC67E4 /* ChangeFilterStatusAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D011B90B1FAF975F00DC67E4 /* ChangeFilterStatusAction.swift */; };
 		D04F2A401FAB8F19005EED8B /* NSAttributedString+html.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F2A3F1FAB8F19005EED8B /* NSAttributedString+html.swift */; };
@@ -574,6 +576,8 @@
 				AD29EB3C1FAC9533008DBBB2 /* DateFormatter+update.swift in Sources */,
 				D0DDAD101FA8E50B004A683A /* zendeskGuideTests.swift in Sources */,
 				AD29EB361FAC94E1008DBBB2 /* ArticlesMapper.swift in Sources */,
+				ADE563F31FB03FA800A927F4 /* ChangeFilterStatusAction.swift in Sources */,
+				ADE563F21FB03FA500A927F4 /* FilterArticlesAction.swift in Sources */,
 				D0EBB2351FAF1DF200930834 /* ChangeLoadingStatusAction.swift in Sources */,
 				D0EBB2341FAF1DC300930834 /* ArticlesNextPageFetchedAction.swift in Sources */,
 				AD29EB351FAC92B7008DBBB2 /* UtilTest.swift in Sources */,

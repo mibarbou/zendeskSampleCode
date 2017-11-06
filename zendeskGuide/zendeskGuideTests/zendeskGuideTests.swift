@@ -127,15 +127,24 @@ class zendeskGuideTests: XCTestCase {
         XCTAssertEqual(guideArticles!.articles.count, 2)
         XCTAssertEqual(guideArticles!, expectedGuideArticles)
     }
+	
+	func testDateFormatter() {
+		let rawDateString = "2017-10-31T10:00:05Z"
+		let date = ArticlesMapper().getDate(string: rawDateString)!
+		let dateString = DateFormatter.updateArticleViewModel.string(from: date)
+		XCTAssertEqual(dateString, "Oct 31, 2017 at 10:00 AM")
+	}
     
     
     func testGuideArticlesReducer() {
         let initialState = GuideArticlesReducer().initialState
         
         let guideArticlesFirst = ArticlesMapper().getGuideArticles(response: self.json2)!
-        let expectedFirstState = GuideArticlesState(articles: guideArticlesFirst.articles,
+		let expectedFirstState = GuideArticlesState(articles: guideArticlesFirst.articles,
+													filteredArticles: [],
                                                     nextPage: guideArticlesFirst.nextPage,
-                                                    isLoading: false)
+													isLoading: false,
+													isFiltering: false)
         
         let actionFirstPage = ArticlesFetchedAction(articles: guideArticlesFirst.articles,
                                                     nextPage: guideArticlesFirst.nextPage)
@@ -145,9 +154,11 @@ class zendeskGuideTests: XCTestCase {
         
         let guideArticlesSecond = ArticlesMapper().getGuideArticles(response: self.json3)!
         let allArticles = guideArticlesFirst.articles + guideArticlesSecond.articles
-        let expectedSecondState = GuideArticlesState(articles: allArticles,
+		let expectedSecondState = GuideArticlesState(articles: allArticles,
+													 filteredArticles: [],
                                                     nextPage: nil,
-                                                    isLoading: false)
+													isLoading: false,
+													isFiltering: false)
         
         let actionNextPage = ArticlesNextPageFetchedAction(articles: guideArticlesSecond.articles,
                                                              nextPage: guideArticlesSecond.nextPage)
@@ -155,11 +166,25 @@ class zendeskGuideTests: XCTestCase {
         XCTAssertEqual(secondState, expectedSecondState)
         
         
-        let expectedChangedStatusState = GuideArticlesState(articles: initialState.articles,
+		let expectedChangedStatusState = GuideArticlesState(articles: initialState.articles,
+															filteredArticles: [],
                                                             nextPage: initialState.nextPage,
-                                                            isLoading: false)
+															isLoading: false,
+															isFiltering: false)
         let changedStatusState = GuideArticlesReducer().reduce(state: initialState, action: ChangeLoadingStatusAction())
         XCTAssertEqual(changedStatusState, expectedChangedStatusState)
+		
+		let changedFilterStatusState = GuideArticlesReducer().reduce(state: initialState, action: ChangeFilterStatusAction(isFiltering: true))!
+		XCTAssert(changedFilterStatusState.isFiltering)
+		
+		let filteredState = GuideArticlesReducer().reduce(state: firstState, action: FilterArticlesAction(query: "halloween"))!
+		let expectedFilteredState = GuideArticlesState(articles: guideArticlesFirst.articles,
+													filteredArticles: [guideArticlesFirst.articles.first!],
+													nextPage: guideArticlesFirst.nextPage,
+													isLoading: false,
+													isFiltering: false)
+		XCTAssertEqual(filteredState.filteredArticles.count, 1)
+		XCTAssertEqual(filteredState, expectedFilteredState)
   
     }
     

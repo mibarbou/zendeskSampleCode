@@ -51,7 +51,7 @@ struct GuideArticlesReducer: Reducer {
                 return GuideArticlesState(articles: state.articles,
                                           filteredArticles: filteredArticles,
                                           nextPage: state.nextPage,
-                                          isLoading: true,
+                                          isLoading: state.isLoading,
                                           isFiltering: state.isFiltering)
             }
         }
@@ -66,11 +66,6 @@ struct GuideArticlesReducer: Reducer {
         
 		return nil
 	}
-    
-}
-
-
-extension GuideArticlesReducer {
     
 }
 
