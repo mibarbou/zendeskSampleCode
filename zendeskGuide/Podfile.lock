@@ -1,0 +1,27 @@
+PODS:
+  - Alamofire (4.5.1)
+  - Gloss (1.2.4)
+  - Suas (1.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Gloss
+  - Suas (from `https://github.com/zendesk/suas-ios.git`)
+
+EXTERNAL SOURCES:
+  Suas:
+    :git: https://github.com/zendesk/suas-ios.git
+
+CHECKOUT OPTIONS:
+  Suas:
+    :commit: 4f7438598d3fc76995e7b28d86ee06081548ab07
+    :git: https://github.com/zendesk/suas-ios.git
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Gloss: 4e036074610fdb993abcb958ebcd7332588e2333
+  Suas: ab168f87801ddac901edbfdab8215589823625a0
+
+PODFILE CHECKSUM: 2821871e5892eef17cb205c4ef8133464ff7f77b
+
+COCOAPODS: 1.3.1
